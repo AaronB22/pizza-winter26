@@ -12,7 +12,7 @@
 <body>
   <main>
     <header>
-      <img src="./imgs/duck.jpeg" alt="pizza guy">
+      <img src="./imgs/duck.jpeg" alt="pizza guy" class="spin">
         <h1> Welcome to Duck's Pizza</h1>
         <h2>Serving GRC Student's for 50 years</h2>
         <hr>
@@ -21,6 +21,42 @@
     </header>
     <form></form>
 
+    <form id="pizza-form" action="#" method="get">
+        <section>
+          <fieldset>
+            <legend>Contact Info</legend>
+            <label for="fname">First Name:</label>
+            <input type="text" id="fname" name="fname">
+  
+            <label for="lname">Last Name:</label>
+            <input type="text" id="lname" name="lname">
+  
+            <label for="email">Email Address:</label>
+            <input type="text" id="email" name="email">
+          </fieldset>
+          
+          <fieldset>
+            <legend>Select pickup or delivery</legend>
+            <labal for="pickup">
+                <input type="radio" name="method">Pickup
+            </labal>
+            <label for="delivery">
+                <input type="radio" name="method">Delivery
+            </label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Select Toppings</legend>
+
+          </fieldset>
+
+          <fieldset>
+            <legend>Pizza Size</legend>
+          </fieldset>
+
+        </section>
+        <button type="submit" id="'order-button">Place Order To the Quack</button>
+    </form>
   </main>
 
 </body>
