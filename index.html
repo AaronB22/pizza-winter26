@@ -7,6 +7,7 @@
   <title>Duck Pizza</title>
   <link rel="icon" href="./imgs/pizzaDuck.jpeg">
   <link rel="stylesheet" href="./styles/style.css">
+  <script defer src="./pizza.js"></script>
 </head>
 
 <body>
@@ -25,23 +26,30 @@
       <section>
         <fieldset>
           <legend>Contact Info</legend>
-          <label for="fname">First Name:</label>
+          <label for="fname">First Name:
+            <span class="err" id="err-fname">First Name Required!</span>
+          </label>
           <input type="text" id="fname" name="fname">
 
-          <label for="lname">Last Name:</label>
+          <label for="lname">Last Name:
+            <span class="err" id="err-lname">Last Name Required!</span>
+          </label>
           <input type="text" id="lname" name="lname">
 
-          <label for="email">Email Address:</label>
+          <label for="email">Email Address:
+            <span class="err" id="err-email">Email Required!</span>
+          </label>
           <input type="text" id="email" name="email">
         </fieldset>
 
         <fieldset>
           <legend>Select pickup or delivery</legend>
+          <span class="err" id="err-method">Please select deliver method!</span>
           <labal for="pickup">
-            <input type="radio" name="method">Pickup
+            <input type="radio" name="method" id="pickup">Pickup
           </labal>
           <label for="delivery">
-            <input type="radio" name="method">Delivery
+            <input type="radio" name="method" id="delivery">Delivery
           </label>
         </fieldset>
 
@@ -67,6 +75,7 @@
 
         <fieldset>
           <legend>Pizza Size</legend>
+          <span class="err" id="err-size">Please select a pizza size!</span>
           <select id="size" name="name">
             <option value="none"></option>
             <option value="small">Small</option>
@@ -85,7 +94,6 @@
       <button type="submit" id="'order-button">Place Order To the Quack</button>
     </form>
   </main>
-
 </body>
 
 </html>
