@@ -6,7 +6,8 @@ const app = express();
 
 //Define PORT
 const PORT= 3000;
-
+//Set EJS as the view engine, vroom vroom
+app.set('view engine', 'ejs')
 //Static file serving
 
 app.use(express.static('public'))
@@ -33,23 +34,27 @@ app.post('/submit-order', (req,res)=>{
     }
     //add order to orders array
     orders.push(order);
-    res.sendFile(`${import.meta.dirname}/views/confirmation.html`);
+    // res.sendFile(`${import.meta.dirname}/views/confirmation.html`);
+    res.render('confirmation', {order})
 })
 
 app.get('/admin', (req, res) => {
-    res.send(orders);
+    res.render('admin', {orders})
 });
 
 // Define our main route ('/')
 app.get('/', (req,res)=>{
-    res.sendFile(`${import.meta.dirname}/views/home.html`);
+    // res.sendFile(`${import.meta.dirname}/views/home.html`);
+    res.render('home')
 });
 
 app.get('/contact-us', (req,res)=>{
-    res.sendFile(`${import.meta.dirname}/views/contact.html`);
+    // res.sendFile(`${import.meta.dirname}/views/contact.html`);
+    res.render('contact')
 })
 app.get('/thank-you', (req, res) => {
-    res.sendFile(`${import.meta.dirname}/views/confirmation.html`);
+    // res.sendFile(`${import.meta.dirname}/views/confirmation.html`);
+    res.render('confirmation')
 })
 
 //Start Server

@@ -46,29 +46,29 @@
           <legend>Select pickup or delivery</legend>
           <span class="err" id="err-method">Please select deliver method!</span>
           <labal for="pickup">
-            <input type="radio" name="method" id="pickup">Pickup
+            <input type="radio" name="method" id="pickup" value="pickup">Pickup
           </labal>
           <label for="delivery">
-            <input type="radio" name="method" id="delivery">Delivery
+            <input type="radio" name="method" id="delivery" value="delivery">Delivery
           </label>
         </fieldset>
 
         <fieldset>
           <legend>Select Toppings</legend>
           <label for="pepperoni">
-            <input type="checkbox" id="pepperoni" name="toppings[]" value="pepperoni"> Pepperoni
+            <input type="checkbox" id="pepperoni" name="toppings" value="pepperoni"> Pepperoni
           </label>
           <label for="mushrooms">
-            <input type="checkbox" id="mushrooms" name="toppings[]" value="mushrooms"> Mushrooms
+            <input type="checkbox" id="mushrooms" name="toppings" value="mushrooms"> Mushrooms
           </label>
           <label for="meatballs">
-            <input type="checkbox" id="meatballs" name="toppings[]" value="meathballs"> Meatballs
+            <input type="checkbox" id="meatballs" name="toppings" value="meathballs"> Meatballs
           </label>
           <label for="olives">
-            <input type="checkbox" id="olives" name="toppings[]" value="olives"> Olives
+            <input type="checkbox" id="olives" name="toppings" value="olives"> Olives
           </label>
           <label for="bbq">
-            <input type="checkbox" id="bbq" name="toppings[]" value="bbq"> BBQ Sauce
+            <input type="checkbox" id="bbq" name="toppings" value="bbq"> BBQ Sauce
           </label>
 
         </fieldset>
@@ -76,7 +76,7 @@
         <fieldset>
           <legend>Pizza Size</legend>
           <span class="err" id="err-size">Please select a pizza size!</span>
-          <select id="size" name="name">
+          <select id="size" name="size">
             <option value="none"></option>
             <option value="small">Small</option>
             <option value="mid">Meduim</option>

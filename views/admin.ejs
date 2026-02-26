@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="//code.jquery.com/jquery-3.7.1.js"> </script>
+  <script src="//cdn.datatables.net/2.3.7/js/dataTables.js"></script>
+  <link rel="stylesheet" href="//cdn.datatables.net/2.3.7/css/dataTables.dataTables.css">
+  <title>Admin Page</title>
+</head>
+
+<body>
+    <table id="order-table" class="display">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Pickup/Delivery</th>
+                <th>Toppings</th>
+                <th>Size</th>
+                <th>Comment</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+  <% orders.forEach(order =>{ %>
+    <tr>
+           <td>Name: <%=order.fname %> <%=order.lname  %></td>
+           <td>Email: <%= order.email %></td>
+           <td>Pickup or Delivery: <%= order.method %> </td>
+           <td>Toppings: <%= Array.isArray(order.toppings) ? 
+         order.toppings.join(','): 
+         "No toppings" %>
+           </td>
+           <td>Size: <%= order.size %> </td>
+           <td>Comment: <%= order.comment %></td>
+           <td>Date/Time: <%= order.timestamp %></td>
+    </tr>
+    <% }) %>
+    </tbody>
+</table>
+</body>
+  <script defer>
+    let table = new DataTable('#order-table')
+  </script>
+</html>
