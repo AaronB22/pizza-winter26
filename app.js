@@ -1,6 +1,9 @@
 //imports
 import express from 'express';
+import mysql2 from 'mysql2'
+import dotenv from "dotenv"
 
+dotenv.config();
 //Create an express app
 const app = express();
 
@@ -19,6 +22,24 @@ app.use(express.urlencoded({extended:true}));
 //Temp array to store orders
 
 const orders=[];
+
+const pool= mysql2.createPool({
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
+    port: process.env.DB_PORT
+}).promise();
+
+app.get('/db-test', async(req,res)=>{
+    try{
+        const pizza_orders= await pool.query('SELECT * FROM orders');
+        res.send(pizza_orders[0]);
+    }
+    catch(err){
+        console.error('Database error: ',err)
+    }
+});
 
 app.post('/submit-order', (req,res)=>{
     //Create JSON object to store order data
